@@ -1,0 +1,18 @@
+{
+  "contatos": [
+    {
+      "id": 1,
+      "nome": "Bia",
+      "email": "bia@gmail.com",
+      "telefone": "4002-8922",
+      "aniversario": "2001-07-12"
+    },
+    {
+      "id": 2,
+      "nome": "Ana ",
+      "email": "ana@gmail.com",
+      "telefone": "8445-8585",
+      "aniversario": "2007-01-02"
+    }
+  ]
+}

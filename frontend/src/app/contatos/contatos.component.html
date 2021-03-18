@@ -1,0 +1,44 @@
+<h1 class="display-4">Contatos</h1>
+<hr>
+
+<form [formGroup]="contatoForm">
+
+    <label for="exampleFormControlInput1" class="form-label">Nome</label> <input type="text" name="nome"
+        class="form-control" id="exampleFormControlInput1" placeholder="Nome" formControlName="nome"
+        [(ngModel)]="contato.nome">
+    <label for="exampleFormControlInput1" class="form-label">Email</label><input type="email" name="email"
+        class="form-control" id="exampleFormControlInput2" placeholder="name@example.com" formControlName="email"
+        [(ngModel)]="contato.email">
+    <label for="exampleFormControlInput1" class="form-label">Telefone</label><input type="text" name="telefone"
+        class="form-control" id="exampleFormControlInput3" placeholder="XXXXXXXXX" formControlName="telefone"
+        [(ngModel)]="contato.telefone">
+    <label for="exampleFormControlInput1" class="form-label">Aniversário</label><input type="date" name="aniversario"
+        class="form-control" id="exampleFormControlInput4" placeholder="DD/MM/YYYY" formControlName="aniversario"
+        [(ngModel)]="contato.aniversario">
+        <br>
+    <button type="submit" class="btn btn-secondary" (click)="cadastrar()">Cadastrar</button>
+</form>
+
+<h1 class="display-4">Contatos cadastrados</h1>
+<hr>
+<table class="table table-success table-striped">
+    <tr>
+        <th>#Id</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Aniversário</th>
+        <th>Ações</th>
+    </tr>
+    <tr *ngFor="let contato of contatos">
+        <th>{{contato.id}}</th>
+        <th>{{contato.nome}}</th>
+        <th>{{contato.email}}</th>
+        <th>{{contato.telefone}}</th>
+        <th>{{contato.aniversario}}</th>
+        <td><button type="submit" class="btn btn-secondary" (click)="atualizar(contato.id)">Atualizar</button></td>
+        <td><button  type="submit" class="btn btn-secondary" (click)="remover(contato.id)">Remover</button></td>
+
+    </tr>
+
+</table>
